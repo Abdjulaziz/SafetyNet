@@ -17,9 +17,8 @@ const Tab = createBottomTabNavigator();
 
 function MainContainer() {
   return (
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
       <Tab.Navigator
-        initialRouteName={homeTab}
         screenOptions={({ route }) => ({
           title: "",
           tabBarActiveTintColor: "#15921F",
