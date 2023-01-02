@@ -18,13 +18,24 @@ const Login = () => {
     try {
       await firebase.auth().signInWithEmailAndPassword(email, password);
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
+  };
+
+  const forgetPassword = () => {
+    firebase
+      .auth()
+      .sendPasswordResetEmail(email)
+      .then(() => {
+        alert("Password reset email sent");
+      })
+      .catch((error) => {
+        alert(error);
+      });
   };
 
   return (
     <View style={styles.container}>
-      <Text style={{ fontWeight: "bold", fontSize: 26 }}>Login</Text>
       <View style={{ marginTop: 40 }}>
         <TextInput
           style={styles.textInput}
@@ -42,18 +53,33 @@ const Login = () => {
           secureTextEntry={true}
         />
       </View>
+
       <TouchableOpacity
         onPress={() => LoginUser(email, password)}
         style={styles.button}
       >
-        <Text style={{ fontWeight: "bold", fontSize: 26 }}>Login</Text>
+        <Text style={{ fontWeight: "bold", fontSize: 16, color: "white" }}>
+          Log på
+        </Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => {
+          forgetPassword();
+        }}
+        style={{ marginTop: 10 }}
+      >
+        <Text style={{ fontWeight: "bold", fontSize: 14, color: "#15921F70" }}>
+          Glemt adgangskode?
+        </Text>
+      </TouchableOpacity>
+
       <TouchableOpacity
         onPress={() => navigation.navigate("Registration")}
-        style={{ marginTop: 20 }}
+        style={{ marginTop: 190 }}
       >
         <Text style={{ fontWeight: "bold", fontSize: 16 }}>
-          Don't have an account? Register now
+          Ingen konto? <Text style={{ color: "#15921F" }}>Opret nu</Text>
         </Text>
       </TouchableOpacity>
     </View>
@@ -66,24 +92,26 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     marginTop: 100,
+    backgroundColor: "#fffff",
   },
   textInput: {
     paddingTop: 20,
+    paddingLeft: 10,
     paddingBottom: 10,
-    width: 400,
-    fontSize: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: "#000",
+    width: 320,
+    fontSize: 16,
+    borderRadius: 5,
+    backgroundColor: "#ffffff",
     marginBottom: 10,
-    textAlign: "center",
+    textAlign: "left",
   },
   button: {
-    marginTop: 50,
-    height: 70,
-    width: 250,
-    backgroundColor: "#026efd",
+    marginTop: 5,
+    paddingTop: 15,
+    paddingBottom: 15,
+    width: 320,
+    backgroundColor: "#15921F",
     alignItems: "center",
-    alignContent: "center",
-    borderRadius: 50,
+    borderRadius: 5,
   },
 });

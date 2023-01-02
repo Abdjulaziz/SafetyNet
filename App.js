@@ -32,13 +32,12 @@ function App() {
           name="Login"
           component={Login}
           options={{
-            headerTitle: () => <Header name="safetyNet" />,
+            headerTitle: () => <Header name="SafetyNet" />,
             headerStyle: {
               height: 150,
               borderBottomLeftRadius: 50,
               borderBottomRightRadius: 50,
-              backgroundColor: "#00e4d0",
-              shadowColor: "#000",
+
               elevation: 25,
             },
           }}
@@ -47,49 +46,11 @@ function App() {
           name="Registration"
           component={Registration}
           options={{
-            headerTitle: () => <Header name="safetyNet" />,
+            headerTitle: () => <Header name="SafetyNet" />,
             headerStyle: {
               height: 150,
               borderBottomLeftRadius: 50,
               borderBottomRightRadius: 50,
-              backgroundColor: "#00e4d0",
-              shadowColor: "#000",
-              elevation: 25,
-            },
-          }}
-        ></Stack.Screen>
-      </Stack.Navigator>
-    );
-  }
-  if (user.emailVerified === false) {
-    return (
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{
-            headerTitle: () => <Header name="safetyNet" />,
-            headerStyle: {
-              height: 150,
-              borderBottomLeftRadius: 50,
-              borderBottomRightRadius: 50,
-              backgroundColor: "#00e4d0",
-              shadowColor: "#000",
-              elevation: 25,
-            },
-          }}
-        ></Stack.Screen>
-        <Stack.Screen
-          name="Registration"
-          component={Registration}
-          options={{
-            headerTitle: () => <Header name="safetyNet" />,
-            headerStyle: {
-              height: 150,
-              borderBottomLeftRadius: 50,
-              borderBottomRightRadius: 50,
-              backgroundColor: "#00e4d0",
-              shadowColor: "#000",
               elevation: 25,
             },
           }}
