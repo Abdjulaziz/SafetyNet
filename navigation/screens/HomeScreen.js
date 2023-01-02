@@ -4,7 +4,6 @@ import { firebase } from "../../config";
 
 export default function HomeScreen({ navigation }) {
   const [name, setName] = useState("");
-
   useEffect(() => {
     firebase
       .firestore()

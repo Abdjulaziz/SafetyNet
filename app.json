@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "SafetyNet",
-    "slug": "SafetyNet",
+    "slug": "safetynet",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,7 +14,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -26,6 +28,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "65be4a6e-40e0-45c3-aff2-d7d6e925ee89"
+      }
+    },
+    "owner": "safetynet"
   }
 }

@@ -61,14 +61,51 @@ function App() {
       </Stack.Navigator>
     );
   }
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="MainContainer"
-        component={MainContainer}
-      ></Stack.Screen>
-    </Stack.Navigator>
-  );
+  if (user.emailVerified === false) {
+    return (
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+            headerTitle: () => <Header name="safetyNet" />,
+            headerStyle: {
+              height: 150,
+              borderBottomLeftRadius: 50,
+              borderBottomRightRadius: 50,
+              backgroundColor: "#00e4d0",
+              shadowColor: "#000",
+              elevation: 25,
+            },
+          }}
+        ></Stack.Screen>
+        <Stack.Screen
+          name="Registration"
+          component={Registration}
+          options={{
+            headerTitle: () => <Header name="safetyNet" />,
+            headerStyle: {
+              height: 150,
+              borderBottomLeftRadius: 50,
+              borderBottomRightRadius: 50,
+              backgroundColor: "#00e4d0",
+              shadowColor: "#000",
+              elevation: 25,
+            },
+          }}
+        ></Stack.Screen>
+      </Stack.Navigator>
+    );
+  } else {
+    return (
+      <Stack.Navigator>
+        <Stack.Screen
+          name="MainContainer"
+          component={MainContainer}
+        ></Stack.Screen>
+      </Stack.Navigator>
+    );
+  }
 }
 
 export default () => {
