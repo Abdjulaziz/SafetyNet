@@ -1,13 +1,21 @@
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState, useEffect } from "react";
 import { firebase } from "./config";
 
 import Login from "./src/Login";
 import Registration from "./src/Registration";
+import ForgetPassword from "./src/ForgetPassword";
 import MainContainer from "./navigation/MainContainer";
 import Header from "./components/Header";
 
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: "#ffffff",
+  },
+};
 const Stack = createStackNavigator();
 
 function App() {
@@ -35,9 +43,6 @@ function App() {
             headerTitle: () => <Header name="SafetyNet" />,
             headerStyle: {
               height: 150,
-              borderBottomLeftRadius: 50,
-              borderBottomRightRadius: 50,
-
               elevation: 25,
             },
           }}
@@ -49,8 +54,17 @@ function App() {
             headerTitle: () => <Header name="SafetyNet" />,
             headerStyle: {
               height: 150,
-              borderBottomLeftRadius: 50,
-              borderBottomRightRadius: 50,
+              elevation: 25,
+            },
+          }}
+        ></Stack.Screen>
+        <Stack.Screen
+          name="ForgetPassword"
+          component={ForgetPassword}
+          options={{
+            headerTitle: () => <Header name="SafetyNet" />,
+            headerStyle: {
+              height: 150,
               elevation: 25,
             },
           }}
@@ -71,7 +85,7 @@ function App() {
 
 export default () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={MyTheme}>
       <App />
     </NavigationContainer>
   );

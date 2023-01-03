@@ -111,7 +111,9 @@ const Registration = () => {
           }
           style={styles.button}
         >
-          <Text style={{ fontWeight: "bold", fontSize: 22 }}>Register</Text>
+          <Text style={{ fontWeight: "bold", fontSize: 16, color: "#ffffff" }}>
+            Register
+          </Text>
         </TouchableOpacity>
       </View>
     </KeyboardAwareScrollView>
@@ -125,24 +127,26 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     marginTop: 100,
+    backgroundColor: "#fffff",
   },
   textInput: {
     paddingTop: 20,
+    paddingLeft: 10,
     paddingBottom: 10,
-    width: 400,
-    fontSize: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: "#000",
+    width: 320,
+    fontSize: 16,
+    borderRadius: 5,
+    backgroundColor: "#F2F2F2",
     marginBottom: 10,
-    textAlign: "center",
+    textAlign: "left",
   },
   button: {
-    marginTop: 50,
-    height: 70,
-    width: 250,
-    backgroundColor: "#026efd",
+    marginTop: 5,
+    paddingTop: 15,
+    paddingBottom: 15,
+    width: 320,
+    backgroundColor: "#15921F",
     alignItems: "center",
-    alignContent: "center",
-    borderRadius: 50,
+    borderRadius: 5,
   },
 });

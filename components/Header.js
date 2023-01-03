@@ -3,7 +3,7 @@ import React from "react";
 
 const Header = (props) => {
   return (
-    <View style={{ marginLeft: 15 }}>
+    <View>
       <Text style={{ fontWeight: "bold", fontSize: 28 }}>{props.name}</Text>
     </View>
   );
