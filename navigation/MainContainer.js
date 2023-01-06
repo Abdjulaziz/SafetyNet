@@ -1,5 +1,5 @@
 import * as React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
@@ -14,20 +14,27 @@ const profileTab = "Details";
 const settingsTab = "Settings";
 
 const Tab = createBottomTabNavigator();
-
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: "#ffffff",
+  },
+};
 function MainContainer() {
   return (
-    <NavigationContainer independent={true}>
+    <NavigationContainer theme={MyTheme} independent={true}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           title: "",
+          headerShown: false,
           tabBarActiveTintColor: "#15921F",
           tabBarInactiveTintColor: "#000",
           tabBarStyle: { display: "flex" },
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
             let rn = route.name;
-            size = 30;
+            size = 32;
             if (rn === homeTab) {
               iconName = focused ? "home" : "home-outline";
             } else if (rn === profileTab) {
@@ -40,9 +47,30 @@ function MainContainer() {
           },
         })}
       >
-        <Tab.Screen name={homeTab} component={HomeScreen} />
-        <Tab.Screen name={profileTab} component={ProfileScreen} />
-        <Tab.Screen name={settingsTab} component={SettingsScreen} />
+        <Tab.Screen
+          name={homeTab}
+          component={HomeScreen}
+          options={{
+            title: "",
+            headerShown: false,
+          }}
+        />
+        <Tab.Screen
+          name={profileTab}
+          component={ProfileScreen}
+          options={{
+            title: "",
+            headerShown: false,
+          }}
+        />
+        <Tab.Screen
+          name={settingsTab}
+          component={SettingsScreen}
+          options={{
+            title: "",
+            headerShown: false,
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );

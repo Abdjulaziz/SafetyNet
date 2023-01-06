@@ -4,7 +4,16 @@ import React from "react";
 const Header = (props) => {
   return (
     <View>
-      <Text style={{ fontWeight: "bold", fontSize: 28 }}>{props.name}</Text>
+      <Text
+        style={{
+          fontWeight: "bold",
+          fontSize: 28,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {props.name}
+      </Text>
     </View>
   );
 };
