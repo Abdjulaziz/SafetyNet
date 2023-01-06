@@ -76,6 +76,9 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="MainContainer"
+          options={{
+            headerShown: false,
+          }}
           component={MainContainer}
         ></Stack.Screen>
       </Stack.Navigator>

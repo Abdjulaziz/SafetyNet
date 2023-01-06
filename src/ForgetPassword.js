@@ -30,7 +30,7 @@ const ForgetPassword = () => {
       <View style={{ marginTop: 40 }}>
         <TextInput
           style={styles.textInput}
-          placeholder="Email"
+          placeholder="E-mail"
           onChangeText={(email) => setEmail(email)}
           autoCapitalize="none"
           autoCorrect={false}
@@ -60,9 +60,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fffff",
   },
   textInput: {
-    paddingTop: 20,
-    paddingLeft: 10,
-    paddingBottom: 10,
+    padding: 15,
     width: 320,
     fontSize: 16,
     borderRadius: 5,

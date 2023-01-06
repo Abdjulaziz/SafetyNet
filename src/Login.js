@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   TextInput,
   StyleSheet,
+  AsyncStorage,
 } from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -22,31 +23,19 @@ const Login = () => {
     }
   };
 
-  const forgetPassword = () => {
-    firebase
-      .auth()
-      .sendPasswordResetEmail(email)
-      .then(() => {
-        alert("Password reset email sent");
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  };
-
   return (
     <View style={styles.container}>
       <View style={{ marginTop: 40 }}>
         <TextInput
           style={styles.textInput}
-          placeholder="Email"
+          placeholder="E-mail"
           onChangeText={(email) => setEmail(email)}
           autoCapitalize="none"
           autoCorrect={false}
         />
         <TextInput
           style={styles.textInput}
-          placeholder="Password"
+          placeholder="Adgangskode"
           onChangeText={(password) => setPaswword(password)}
           autoCapitalize="none"
           autoCorrect={false}
@@ -59,12 +48,12 @@ const Login = () => {
         style={styles.button}
       >
         <Text style={{ fontWeight: "bold", fontSize: 16, color: "white" }}>
-          Log på
+          Log ind
         </Text>
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate("ForgetPassword.js")}
+        onPress={() => navigation.navigate("ForgetPassword")}
         style={{ marginTop: 10 }}
       >
         <Text style={{ fontWeight: "bold", fontSize: 14, color: "#15921F70" }}>
@@ -93,9 +82,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fffff",
   },
   textInput: {
-    paddingTop: 20,
-    paddingLeft: 10,
-    paddingBottom: 10,
+    padding: 15,
     width: 320,
     fontSize: 16,
     borderRadius: 5,

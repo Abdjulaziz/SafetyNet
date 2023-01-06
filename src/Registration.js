@@ -58,32 +58,31 @@ const Registration = () => {
   return (
     <KeyboardAwareScrollView>
       <View style={styles.container}>
-        <Text style={{ fontWeight: "bold", fontSize: 23 }}>Register Here!</Text>
         <View style={{ marginTop: 40 }}>
           <TextInput
             style={styles.textInput}
-            placeholder="First Name"
+            placeholder="Fornavn"
             onChangeText={(firstName) => setFirstName(firstName)}
             autoCorrect={false}
             returnKeyType={"next"}
           />
           <TextInput
             style={styles.textInput}
-            placeholder="Last Name"
+            placeholder="Efternavn"
             onChangeText={(lastName) => setLastName(lastName)}
             autoCorrect={false}
             returnKeyType={"next"}
           />
           <TextInput
             style={styles.textInput}
-            placeholder="Email"
+            placeholder="E-mail"
             onChangeText={(email) => setEmail(email)}
             autoCorrect={false}
             returnKeyType={"next"}
           />
           <TextInput
             style={styles.textInput}
-            placeholder="Phone Number"
+            placeholder="Telefon nummer"
             keyboardType="numeric"
             onChangeText={(phoneNumber) => setPhoneNumber(phoneNumber)}
             autoCorrect={false}
@@ -98,7 +97,7 @@ const Registration = () => {
           /> */}
           <TextInput
             style={styles.textInput}
-            placeholder="Password"
+            placeholder="Adgangskode"
             onChangeText={(password) => setPassword(password)}
             autoCorrect={false}
             secureTextEntry={true}
@@ -112,7 +111,7 @@ const Registration = () => {
           style={styles.button}
         >
           <Text style={{ fontWeight: "bold", fontSize: 16, color: "#ffffff" }}>
-            Register
+            Registrer
           </Text>
         </TouchableOpacity>
       </View>
@@ -130,9 +129,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fffff",
   },
   textInput: {
-    paddingTop: 20,
-    paddingLeft: 10,
-    paddingBottom: 10,
+    padding: 15,
     width: 320,
     fontSize: 16,
     borderRadius: 5,
